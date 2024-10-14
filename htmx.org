@@ -1,0 +1,136 @@
+#+title: HTMX
+#+options: toc:nil
+#+options: num:nil
+#+options: author:nil
+#+options: creator:nil
+#+options: date:nil
+#+options: timestamp:nil
+#+reveal_root: https://cdn.jsdelivr.net/npm/reveal.js@4.4.0
+#+reveal_reveal_js_version: 4
+#+reveal_theme: simple
+# #+reveal_init_options: transition: 'none', navigationMode: 'linear'
+#+reveal_init_options: width: 1280
+#+reveal_hlevel: 2
+
+* The Story So Far
+- nothing to DHTML to Ajax to Jquery and Mootools to this sucks to Angular to React and Vue.
+
+* SPA Day
+- You aren't writing a SPA
+- Even SPAs have more traditional things (settings, user profile, etc)
+- Island architecture
+- Complexity where you need it
+
+* Why
+- JSON -> React (JS) -> HTML vs. Just HTML
+- You're owning the frontend and backend
+  - Not writing endpoints just for yourself
+- URLS for free
+- Use built-in browser functionality (history, forms)
+- Less code, faster load
+
+* HOWL
+- "We need this one thing to change, guess we need to use React."
+- Gets even more lock-in-y with docs moving to Next.JS; server-rendered all-in-one.
+- Choose your preferred environment, anything that can serve HTML.
+
+* Five Main Attributes
+- ~hx-get~
+- ~hx-target~
+- ~hx-trigger~
+- ~hx-swap~
+- ~hx-select~
+
+* hx-get
+- Choose the method and path of the request.
+- Also ~hx-post~, ~hx-put~, ~hx-patch~, ~hx-delete~.
+
+#+begin_src html
+  <button type="button" hx-get="/content">
+    Load Content
+  </button>
+#+end_src
+
+VIDEO
+
+* hx-target
+- Choose where the response content goes.
+
+#+begin_src html
+  <div id="content-container">
+    No content yet.
+  </div>
+
+  <button type="button" hx-get="/content" hx-target="#content-container">
+    Load Content
+  </button>
+#+end_src
+
+VIDEO
+
+* hx-trigger
+- Choose what causes the request.
+- Also some modifiers like ~delay~.
+
+#+begin_src html
+  <div id="content-container">
+    No content yet.
+  </div>
+
+  <input hx-get="/content" target="#content-container" trigger="onkeyup delay:1s">
+#+end_src
+
+VIDEO
+
+* hx-swap
+- Choose how to "swap in" the content.
+- ~outerHTML~, ~innerHTML~, ~beforeend~, etc.
+- Morph swaps preserve focus and state.
+
+#+begin_src html
+  <ul id="my-list">
+  </ul>
+
+  <form action="POST" hx-post="/list-items" hx-target="#my-list" hx-swap="beforeend">
+    <input type="text" name="name">
+    <input type="submit">
+  </form>
+#+end_src
+
+* hx-select
+- Pull out content from the response.
+
+#+begin_src js-jsx
+  app.get('/content', (c) => (
+      <>
+        <div id="content-container">
+          <strong>{new Date()}</strong>
+        </div>
+
+        <input hx-get="/content"
+               hx-select="#content-container"
+               target="#content-container"
+               trigger="onkeyup delay:1s" />
+      </>
+  ));
+#+end_src
+
+* Factoring Views
+- Break it up into things separately retrieved.
+- Or not, and just use ~hx-select~.
+
+* HX-Boost
+- ~hx-boost="true"~ makes links and forms do page-replacement.
+- Paint holding kinda makes this less needed.
+- Some novel uses, e.g. music player that stays between pages.
+
+* Other stuff
+- hx-indicator: loading indicator
+- hx-confirm: confirmation dialog
+- hyperscript: concise language
+- hx-push-url: update URL
+- hyperscript: more concise language for
+
+* Resources
+- [[https://htmx.org/][htmx.org]]
+- [[https://hypermedia.systems/][hypermedia.systems]]
