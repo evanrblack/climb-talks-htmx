@@ -165,10 +165,12 @@ const TodoCard: FC = ({ todo }) => {
         hx-swap="outerHTML"
         {...checkProps}
       />
+
       <div class="ms-2 flex-grow-1">{todo.name}</div>
+
       <button
         type="button"
-        class="btn btn-sm btn-info"
+        class="btn btn-sm btn-outline-info"
         hx-get={`${todoPath}/edit-modal`}
         hx-target="#modals-here"
         data-bs-toggle="modal"
@@ -176,9 +178,10 @@ const TodoCard: FC = ({ todo }) => {
       >
         Edit
       </button>
+
       <button
         type="button"
-        class="btn btn-sm btn-danger ms-1"
+        class="btn btn-sm btn-outline-danger ms-1"
         hx-delete={todoPath}
         hx-target="closest li"
         hx-swap="delete"
@@ -203,6 +206,7 @@ app.get('/todos', (c) => {
             <label for="text" class="form-label">
               Name
             </label>
+
             <input name="name" class="form-control" required />
           </div>
         </form>
@@ -267,6 +271,7 @@ app.get('/todos/:id/edit-modal', (c) => {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Edit "{todo.name}"</h5>
+
           <button
             type="button"
             class="btn-close"
@@ -274,6 +279,7 @@ app.get('/todos/:id/edit-modal', (c) => {
             aria-label="Close"
           />
         </div>
+
         <div class="modal-body">
           <form
             hx-put={`/todos/${todo.id}`}
@@ -288,6 +294,7 @@ app.get('/todos/:id/edit-modal', (c) => {
               <label for="name" class="form-label">
                 Name
               </label>
+
               <input
                 type="text"
                 name="name"
@@ -296,6 +303,7 @@ app.get('/todos/:id/edit-modal', (c) => {
                 required
               />
             </div>
+
             <button type="submit" class="btn btn-primary mt-3">
               Submit
             </button>
