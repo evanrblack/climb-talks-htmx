@@ -148,10 +148,10 @@ VIDEO
 - Some novel uses, e.g. music player that stays between pages.
 
 * Other stuff
-- hx-indicator: loading indicator
-- hx-confirm: confirmation dialog
-- hx-push-url: update URL
-- hyperscript: concise language
+- ~hx-indicator~: loading indicator
+- ~hx-confirm~: confirmation dialog
+- ~hx-push-url~: update URL
+- ~hyperscript~: concise language
 
 * Resources
 - [[https://htmx.org/][htmx.org]]

@@ -21,6 +21,11 @@ const Layout: FC = (props) => (
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous"
       />
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
     </head>
     <body>
       <main class="container mt-3">{props.children}</main>
@@ -150,7 +155,10 @@ const TodoCard: FC = ({ todo }) => {
     ? { 'hx-delete': completionPath, checked: true }
     : { 'hx-post': completionPath, checked: false };
   return (
-    <li class="list-group-item d-flex align-items-center">
+    <li
+      id={`todo-${todo.id}`}
+      class="list-group-item d-flex align-items-center"
+    >
       <input
         type="checkbox"
         hx-target="closest li"
@@ -159,7 +167,18 @@ const TodoCard: FC = ({ todo }) => {
       />
       <div class="ms-2 flex-grow-1">{todo.name}</div>
       <button
-        class="btn btn-sm btn-danger"
+        type="button"
+        class="btn btn-sm btn-info"
+        hx-get={`${todoPath}/edit-modal`}
+        hx-target="#modals-here"
+        data-bs-toggle="modal"
+        data-bs-target="#modals-here"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        class="btn btn-sm btn-danger ms-1"
         hx-delete={todoPath}
         hx-target="closest li"
         hx-swap="delete"
@@ -196,6 +215,20 @@ app.get('/todos', (c) => {
           ))}
         </ul>
       </div>
+
+      <div
+        id="modals-here"
+        class="modal modal-blur fade"
+        aria-hidden="false"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content"></div>
+        </div>
+      </div>
     </Layout>,
   );
 });
@@ -204,6 +237,13 @@ app.post('/todos', async (c) => {
   const body = await c.req.parseBody();
   const todo = { id: Date.now().toString(), name: body.name };
   todos.push(todo);
+  return c.html(<TodoCard todo={todo} />);
+});
+
+app.put('/todos/:id', async (c) => {
+  const todo = getTodo(c);
+  const body = await c.req.parseBody();
+  todo.name = body.name;
   return c.html(<TodoCard todo={todo} />);
 });
 
@@ -217,6 +257,53 @@ app.delete('/todos/:id/completion', (c) => {
   const todo = getTodo(c);
   todo.completed = false;
   return c.html(<TodoCard todo={todo} />);
+});
+
+app.get('/todos/:id/edit-modal', (c) => {
+  const todo = getTodo(c);
+
+  return c.html(
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit "{todo.name}"</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          />
+        </div>
+        <div class="modal-body">
+          <form
+            hx-put={`/todos/${todo.id}`}
+            hx-target={`#todo-${todo.id}`}
+            hx-swap="outerHTML"
+            {...{
+              'hx-on::after-request':
+                "bootstrap.Modal.getInstance('#modals-here').hide()",
+            }}
+          >
+            <div class="form-group">
+              <label for="name" class="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={todo.name}
+                class="form-control"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>,
+  );
 });
 
 app.delete('/todos/:id', (c) => {
