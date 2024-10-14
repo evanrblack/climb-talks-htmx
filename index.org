@@ -24,7 +24,7 @@
 
 * SPA Day
 - Most things don't need to be single page apps
-- Even SPAs have more traditional pages: settings, user profile, etc
+- Even SPAs have normal pages: settings, user profile, etc
 - Island architecture
 - Complexity where you need it
 
