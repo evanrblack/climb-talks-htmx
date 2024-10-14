@@ -11,6 +11,7 @@
 # #+reveal_init_options: transition: 'none', navigationMode: 'linear'
 #+reveal_init_options: width: 1280
 #+reveal_hlevel: 2
+#+reveal_extra_css: print.css
 
 * The Story So Far
 - 1997: DHTML
