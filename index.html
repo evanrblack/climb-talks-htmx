@@ -11,7 +11,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/theme/league.css" id="theme"/>
 
 <link rel="stylesheet" href="print.css"/>
 </head>
@@ -23,8 +23,8 @@
 </section>
 
 <section>
-<section id="slide-orge41c93a">
-<h2 id="orge41c93a">The Story So Far</h2>
+<section id="slide-orgcaaf9e6">
+<h2 id="orgcaaf9e6">The Story So Far</h2>
 <ul>
 <li>1997: DHTML</li>
 <li>1999: AJAX</li>
@@ -39,8 +39,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org7f13bb1">
-<h2 id="org7f13bb1">SPA Day</h2>
+<section id="slide-orgdca87b8">
+<h2 id="orgdca87b8">SPA Day</h2>
 <ul>
 <li>Most things don't need to be single page apps</li>
 <li>Even SPAs have normal pages: settings, user profile, etc</li>
@@ -52,8 +52,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgeeafb3d">
-<h2 id="orgeeafb3d">HTMX-isms</h2>
+<section id="slide-orga674bfb">
+<h2 id="orga674bfb">HTMX-isms</h2>
 <ul>
 <li>Embrace hypertext. Be declarative.</li>
 <li>Use built-in browser functionality when possible.</li>
@@ -66,8 +66,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org64c582b">
-<h2 id="org64c582b">HOWL Stack</h2>
+<section id="slide-orgdd8500b">
+<h2 id="orgdd8500b">HOWL Stack</h2>
 <ul>
 <li>Hypertext On Whatever <i>you'd</i> Like.</li>
 <li>If your favored stack can serve HTML, you're good to go!</li>
@@ -79,8 +79,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org5d29801">
-<h2 id="org5d29801">Five Main Attributes</h2>
+<section id="slide-orga731b94">
+<h2 id="orga731b94">Five Main Attributes</h2>
 <ul>
 <li><code>hx-get</code></li>
 <li><code>hx-target</code></li>
@@ -93,8 +93,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgdb832a3">
-<h2 id="orgdb832a3">hx-get</h2>
+<section id="slide-orged1ea8b">
+<h2 id="orged1ea8b">hx-get</h2>
 <ul>
 <li>Choose the method and path of the request.</li>
 <li>Also <code>hx-post</code>, <code>hx-put</code>, <code>hx-patch</code>, <code>hx-delete</code>.</li>
@@ -103,24 +103,24 @@
 
 <div class="org-src-container">
 
-<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">button</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"button"</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>&gt;
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #feacd0;">button</span> <span style="color: #00d3d0;">type</span>=<span style="color: #79a8ff;">"button"</span> <span style="color: #00d3d0;">hx-get</span>=<span style="color: #79a8ff;">"/content"</span>&gt;
   Load Content
-&lt;/<span style="color: #721045;">button</span>&gt;
+&lt;/<span style="color: #feacd0;">button</span>&gt;
 </code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org5fa8117">
-<h2 id="org5fa8117">hx-get</h2>
-<video src="videos/hx-get.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+<section id="slide-org4512630">
+<h2 id="org4512630">hx-get</h2>
+<video src="videos/hx-get.mp4" autoplay loop mute style="border: 2px solid black">
 
 </section>
 </section>
 <section>
-<section id="slide-org72cecba">
-<h2 id="org72cecba">hx-target</h2>
+<section id="slide-org4c7c17a">
+<h2 id="org4c7c17a">hx-target</h2>
 <ul>
 <li>Choose where the response content goes.</li>
 
@@ -128,28 +128,28 @@
 
 <div class="org-src-container">
 
-<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #feacd0;">div</span> <span style="color: #00d3d0;">id</span>=<span style="color: #79a8ff;">"content-container"</span>&gt;
   No content yet.
-&lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #feacd0;">div</span>&gt;
 
-&lt;<span style="color: #721045;">button</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"button"</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span> <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>&gt;
+&lt;<span style="color: #feacd0;">button</span> <span style="color: #00d3d0;">type</span>=<span style="color: #79a8ff;">"button"</span> <span style="color: #00d3d0;">hx-get</span>=<span style="color: #79a8ff;">"/content"</span> <span style="color: #00d3d0;">hx-target</span>=<span style="color: #79a8ff;">"#content-container"</span>&gt;
   Load Content
-&lt;/<span style="color: #721045;">button</span>&gt;
+&lt;/<span style="color: #feacd0;">button</span>&gt;
 </code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org47e89d3">
-<h2 id="org47e89d3">hx-target</h2>
-<video src="videos/hx-target.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+<section id="slide-org73fd803">
+<h2 id="org73fd803">hx-target</h2>
+<video src="videos/hx-target.mp4" autoplay loop mute style="border: 2px solid black">
 
 </section>
 </section>
 <section>
-<section id="slide-orgc93266a">
-<h2 id="orgc93266a">hx-trigger</h2>
+<section id="slide-orgab0a97e">
+<h2 id="orgab0a97e">hx-trigger</h2>
 <ul>
 <li>Choose what causes the request.</li>
 <li>Also some modifiers like <code>delay</code>.</li>
@@ -158,28 +158,28 @@
 
 <div class="org-src-container">
 
-<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #feacd0;">div</span> <span style="color: #00d3d0;">id</span>=<span style="color: #79a8ff;">"content-container"</span>&gt;
   No content yet.
-&lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #feacd0;">div</span>&gt;
 
-&lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>
-       <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>
-       <span style="color: #00538b;">hx-trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span>&gt;
+&lt;<span style="color: #feacd0;">input</span> <span style="color: #00d3d0;">hx-get</span>=<span style="color: #79a8ff;">"/content"</span>
+       <span style="color: #00d3d0;">hx-target</span>=<span style="color: #79a8ff;">"#content-container"</span>
+       <span style="color: #00d3d0;">hx-trigger</span>=<span style="color: #79a8ff;">"onkeyup delay:1s"</span>&gt;
 </code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgc359fd9">
-<h2 id="orgc359fd9">hx-trigger</h2>
-<video src="videos/hx-trigger.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+<section id="slide-orged8492d">
+<h2 id="orged8492d">hx-trigger</h2>
+<video src="videos/hx-trigger.mp4" autoplay loop mute style="border: 2px solid black">
 
 </section>
 </section>
 <section>
-<section id="slide-org957c08f">
-<h2 id="org957c08f">hx-swap</h2>
+<section id="slide-orge9db08b">
+<h2 id="orge9db08b">hx-swap</h2>
 <ul>
 <li>Choose how to "swap in" the content.</li>
 <li><code>outerHTML</code>, <code>innerHTML</code>, <code>beforeend</code>, etc.</li>
@@ -189,30 +189,30 @@
 
 <div class="org-src-container">
 
-<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">ul</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"my-list"</span>&gt;&lt;/<span style="color: #721045;">ul</span>&gt;
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #feacd0;">ul</span> <span style="color: #00d3d0;">id</span>=<span style="color: #79a8ff;">"my-list"</span>&gt;&lt;/<span style="color: #feacd0;">ul</span>&gt;
 
-&lt;<span style="color: #721045;">form</span> <span style="color: #00538b;">action</span>=<span style="color: #2544bb;">"POST"</span>
-      <span style="color: #00538b;">hx-post</span>=<span style="color: #2544bb;">"/list-items"</span>
-      <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#my-list"</span>
-      <span style="color: #00538b;">hx-swap</span>=<span style="color: #2544bb;">"beforeend"</span>&gt;
-  &lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"text"</span> <span style="color: #00538b;">name</span>=<span style="color: #2544bb;">"name"</span>&gt;
-  &lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"submit"</span>&gt;
-&lt;/<span style="color: #721045;">form</span>&gt;
+&lt;<span style="color: #feacd0;">form</span> <span style="color: #00d3d0;">action</span>=<span style="color: #79a8ff;">"POST"</span>
+      <span style="color: #00d3d0;">hx-post</span>=<span style="color: #79a8ff;">"/list-items"</span>
+      <span style="color: #00d3d0;">hx-target</span>=<span style="color: #79a8ff;">"#my-list"</span>
+      <span style="color: #00d3d0;">hx-swap</span>=<span style="color: #79a8ff;">"beforeend"</span>&gt;
+  &lt;<span style="color: #feacd0;">input</span> <span style="color: #00d3d0;">type</span>=<span style="color: #79a8ff;">"text"</span> <span style="color: #00d3d0;">name</span>=<span style="color: #79a8ff;">"name"</span>&gt;
+  &lt;<span style="color: #feacd0;">input</span> <span style="color: #00d3d0;">type</span>=<span style="color: #79a8ff;">"submit"</span>&gt;
+&lt;/<span style="color: #feacd0;">form</span>&gt;
 </code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgc70b98e">
-<h2 id="orgc70b98e">hx-swap</h2>
-<video src="videos/hx-swap.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+<section id="slide-orgc83c0b4">
+<h2 id="orgc83c0b4">hx-swap</h2>
+<video src="videos/hx-swap.mp4" autoplay loop mute style="border: 2px solid black">
 
 </section>
 </section>
 <section>
-<section id="slide-org363b34b">
-<h2 id="org363b34b">hx-select</h2>
+<section id="slide-org8984e5e">
+<h2 id="org8984e5e">hx-select</h2>
 <ul>
 <li>Pull out content from the response.</li>
 
@@ -220,17 +220,17 @@
 
 <div class="org-src-container">
 
-<pre  class="src src-js-jsx"   ><code trim>app.get(<span style="color: #2544bb;">'/content'</span>, (c) =&gt; (
+<pre  class="src src-js-jsx"   ><code trim>app.get(<span style="color: #79a8ff;">'/content'</span>, (c) =&gt; (
     &lt;&gt;
-<span style="color: #000000; background-color: #ffffff;">      </span>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
-<span style="color: #000000; background-color: #ffffff;">        </span>&lt;<span style="color: #721045;">strong</span>&gt;{<span style="color: #5317ac;">new</span> <span style="color: #005a5f;">Date</span>()}&lt;/<span style="color: #721045;">strong</span>&gt;
-<span style="color: #000000; background-color: #ffffff;">      </span>&lt;/<span style="color: #721045;">div</span>&gt;
+<span style="color: #ffffff; background-color: #000000;">      </span>&lt;<span style="color: #feacd0;">div</span> <span style="color: #00d3d0;">id</span>=<span style="color: #79a8ff;">"content-container"</span>&gt;
+<span style="color: #ffffff; background-color: #000000;">        </span>&lt;<span style="color: #feacd0;">strong</span>&gt;{<span style="color: #b6a0ff;">new</span> <span style="color: #6ae4b9;">Date</span>()}&lt;/<span style="color: #feacd0;">strong</span>&gt;
+<span style="color: #ffffff; background-color: #000000;">      </span>&lt;/<span style="color: #feacd0;">div</span>&gt;
 
-<span style="color: #000000; background-color: #ffffff;">      </span>&lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>
-             <span style="color: #00538b;">hx-select</span>=<span style="color: #2544bb;">"#content-container"</span>
-             <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>
-             <span style="color: #00538b;">hx-trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span> /&gt;
-<span style="color: #000000; background-color: #ffffff;">    </span>&lt;/&gt;
+<span style="color: #ffffff; background-color: #000000;">      </span>&lt;<span style="color: #feacd0;">input</span> <span style="color: #00d3d0;">hx-get</span>=<span style="color: #79a8ff;">"/content"</span>
+             <span style="color: #00d3d0;">hx-select</span>=<span style="color: #79a8ff;">"#content-container"</span>
+             <span style="color: #00d3d0;">hx-target</span>=<span style="color: #79a8ff;">"#content-container"</span>
+             <span style="color: #00d3d0;">hx-trigger</span>=<span style="color: #79a8ff;">"onkeyup delay:1s"</span> /&gt;
+<span style="color: #ffffff; background-color: #000000;">    </span>&lt;/&gt;
 ));
 </code></pre>
 </div>
@@ -238,22 +238,22 @@
 </section>
 </section>
 <section>
-<section id="slide-orgff46d8a">
-<h2 id="orgff46d8a">hx-select</h2>
-<video src="videos/hx-select.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+<section id="slide-org89e93ec">
+<h2 id="org89e93ec">hx-select</h2>
+<video src="videos/hx-select.mp4" autoplay loop mute style="border: 2px solid black">
 
 </section>
 </section>
 <section>
-<section id="slide-orgb8689b7">
-<h2 id="orgb8689b7">Todos</h2>
-<video src="videos/todos.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black; height: 400px">
+<section id="slide-org222f5ae">
+<h2 id="org222f5ae">Todos</h2>
+<video src="videos/todos.mp4" autoplay loop mute style="border: 2px solid black; height: 400px">
 
 </section>
 </section>
 <section>
-<section id="slide-org3a362d2">
-<h2 id="org3a362d2">Factoring Views</h2>
+<section id="slide-org031849f">
+<h2 id="org031849f">Factoring Views</h2>
 <ul>
 <li>Break it up into things separately retrieved.</li>
 <li>Use <code>HX-*</code> headers to determine partial content.</li>
@@ -264,8 +264,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgc7886b3">
-<h2 id="orgc7886b3">HX-Boost</h2>
+<section id="slide-orgfda1871">
+<h2 id="orgfda1871">HX-Boost</h2>
 <ul>
 <li><code>hx-boost="true"</code> makes links and forms do page-replacement.</li>
 <li>Paint holding kinda makes this less needed.</li>
@@ -276,8 +276,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org3d1ee45">
-<h2 id="org3d1ee45">Other stuff</h2>
+<section id="slide-orgbf89979">
+<h2 id="orgbf89979">Other stuff</h2>
 <ul>
 <li><code>hx-indicator</code>: loading indicator</li>
 <li><code>hx-confirm</code>: confirmation dialog</li>
@@ -289,8 +289,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgeb9cc67">
-<h2 id="orgeb9cc67">Resources</h2>
+<section id="slide-orgbf7cd41">
+<h2 id="orgbf7cd41">Resources</h2>
 <ul>
 <li><a href="https://htmx.org/">htmx.org</a></li>
 <li><a href="https://hypermedia.systems/">hypermedia.systems</a></li>

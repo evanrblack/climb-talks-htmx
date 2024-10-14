@@ -7,7 +7,7 @@
 #+options: timestamp:nil
 #+reveal_root: https://cdn.jsdelivr.net/npm/reveal.js@4.4.0
 #+reveal_reveal_js_version: 4
-#+reveal_theme: simple
+#+reveal_theme: league
 # #+reveal_init_options: transition: 'none', navigationMode: 'linear'
 #+reveal_init_options: width: 1280
 #+reveal_hlevel: 2
@@ -59,7 +59,7 @@
 #+end_src
 
 * hx-get
-#+REVEAL_HTML: <video src="videos/hx-get.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+#+REVEAL_HTML: <video src="videos/hx-get.mp4" autoplay loop mute style="border: 2px solid black">
 
 * hx-target
 - Choose where the response content goes.
@@ -75,7 +75,7 @@
 #+end_src
 
 * hx-target
-#+REVEAL_HTML: <video src="videos/hx-target.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+#+REVEAL_HTML: <video src="videos/hx-target.mp4" autoplay loop mute style="border: 2px solid black">
 
 * hx-trigger
 - Choose what causes the request.
@@ -92,7 +92,7 @@
 #+end_src
 
 * hx-trigger
-#+REVEAL_HTML: <video src="videos/hx-trigger.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+#+REVEAL_HTML: <video src="videos/hx-trigger.mp4" autoplay loop mute style="border: 2px solid black">
 
 * hx-swap
 - Choose how to "swap in" the content.
@@ -112,7 +112,7 @@
 #+end_src
 
 * hx-swap
-#+REVEAL_HTML: <video src="videos/hx-swap.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+#+REVEAL_HTML: <video src="videos/hx-swap.mp4" autoplay loop mute style="border: 2px solid black">
 
 * hx-select
 - Pull out content from the response.
@@ -133,10 +133,10 @@
 #+end_src
 
 * hx-select
-#+REVEAL_HTML: <video src="videos/hx-select.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
+#+REVEAL_HTML: <video src="videos/hx-select.mp4" autoplay loop mute style="border: 2px solid black">
 
 * Todos
-#+REVEAL_HTML: <video src="videos/todos.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black; height: 400px">
+#+REVEAL_HTML: <video src="videos/todos.mp4" autoplay loop mute style="border: 2px solid black; height: 400px">
 
 * Factoring Views
 - Break it up into things separately retrieved.
