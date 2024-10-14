@@ -55,7 +55,9 @@ app.get('/examples', (c) => {
             <a href={`/examples/${e}`}>{e}</a>
           </li>
         ))}
-        <li><a href="/todos">todos</a></li>
+        <li>
+          <a href="/todos">todos</a>
+        </li>
       </ul>
     </Layout>,
   );
@@ -108,8 +110,8 @@ app.get('/examples/swap', (c) => {
       <ul id="my-list"></ul>
 
       <form hx-post="/list-items" hx-target="#my-list" hx-swap="beforeend">
-      <input type="text" name="name" />
-      <input type="submit" value="Submit" />
+        <input type="text" name="name" />
+        <input type="submit" value="Submit" />
       </form>
     </Layout>,
   );

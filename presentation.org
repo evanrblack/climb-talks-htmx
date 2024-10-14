@@ -13,26 +13,32 @@
 #+reveal_hlevel: 2
 
 * The Story So Far
-- nothing to DHTML to Ajax to Jquery and Mootools to this sucks to Angular to React and Vue.
+- 1997: DHTML
+- 1999: AJAX
+- 2004: Gmail, Google Maps
+- 2006: jQuery
+- 2010: Angular
+- 2013: React, Vue, Intercooler
+- 2020: HTMX
 
 * SPA Day
-- You aren't writing a SPA
-- Even SPAs have more traditional things (settings, user profile, etc)
+- Most things don't need to be single page apps
+- Even SPAs have more traditional pages: settings, user profile, etc
 - Island architecture
 - Complexity where you need it
 
-* Why
-- JSON -> React (JS) -> HTML vs. Just HTML
-- You're owning the frontend and backend
-  - Not writing endpoints just for yourself
-- URLS for free
-- Use built-in browser functionality (history, forms)
-- Less code, faster load
+* HTMX-isms
+- Embrace hypertext. Be declarative.
+- Use built-in browser functionality when possible.
+- JSON to React to HTML  vs.  Just HTML
+- Less code, faster loading.
+- JS where you need it.
 
-* HOWL
-- "We need this one thing to change, guess we need to use React."
-- Gets even more lock-in-y with docs moving to Next.JS; server-rendered all-in-one.
-- Choose your preferred environment, anything that can serve HTML.
+* HOWL Stack
+- Hypertext On Whatever /you'd/ Like.
+- If your favored stack can serve HTML, you're good to go!
+- Avoid "Guess we need to use React to have this one page element update."
+- React is becoming even more lock-in-y with Next.js.
 
 * Five Main Attributes
 - ~hx-get~
@@ -51,6 +57,7 @@
   </button>
 #+end_src
 
+* hx-get
 VIDEO
 
 * hx-target
@@ -66,6 +73,7 @@ VIDEO
   </button>
 #+end_src
 
+* hx-target
 VIDEO
 
 * hx-trigger
@@ -77,9 +85,12 @@ VIDEO
     No content yet.
   </div>
 
-  <input hx-get="/content" target="#content-container" trigger="onkeyup delay:1s">
+  <input hx-get="/content"
+         target="#content-container"
+         trigger="onkeyup delay:1s">
 #+end_src
 
+* hx-trigger
 VIDEO
 
 * hx-swap
@@ -99,6 +110,9 @@ VIDEO
   </form>
 #+end_src
 
+* hx-swap
+VIDEO
+
 * hx-select
 - Pull out content from the response.
 
@@ -117,8 +131,15 @@ VIDEO
   ));
 #+end_src
 
+* hx-select
+VIDEO
+
+* Todos
+VIDEO
+
 * Factoring Views
 - Break it up into things separately retrieved.
+- Use ~HX-*~ headers to determine partial content.
 - Or not, and just use ~hx-select~.
 
 * HX-Boost
@@ -129,9 +150,8 @@ VIDEO
 * Other stuff
 - hx-indicator: loading indicator
 - hx-confirm: confirmation dialog
-- hyperscript: concise language
 - hx-push-url: update URL
-- hyperscript: more concise language for
+- hyperscript: concise language
 
 * Resources
 - [[https://htmx.org/][htmx.org]]
