@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>HTMX</title>
+<meta name="author" content="Evan Black"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/theme/simple.css" id="theme"/>
+
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">HTMX</h1><p class="subtitle"></p>
+
+</section>
+
+<section>
+<section id="slide-org839131e">
+<h2 id="org839131e">The Story So Far</h2>
+<ul>
+<li>nothing to DHTML to Ajax to Jquery and Mootools to this sucks to Angular to React and Vue.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org3055537">
+<h2 id="org3055537">SPA Day</h2>
+<ul>
+<li>You aren't writing a SPA</li>
+<li>Even SPAs have more traditional things (settings, user profile, etc)</li>
+<li>Island architecture</li>
+<li>Complexity where you need it</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc54a2a7">
+<h2 id="orgc54a2a7">Why</h2>
+<ul>
+<li>JSON -&gt; React (JS) -&gt; HTML vs. Just HTML</li>
+<li>You're owning the frontend and backend
+<ul>
+<li>Not writing endpoints just for yourself</li>
+
+</ul></li>
+<li>URLS for free</li>
+<li>Use built-in browser functionality (history, forms)</li>
+<li>Less code, faster load</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org11f109b">
+<h2 id="org11f109b">HOWL</h2>
+<ul>
+<li>"We need this one thing to change, guess we need to use React."</li>
+<li>Gets even more lock-in-y with docs moving to Next.JS; server-rendered all-in-one.</li>
+<li>Choose your preferred environment, anything that can serve HTML.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8dfae1b">
+<h2 id="org8dfae1b">Five Main Attributes</h2>
+<ul>
+<li><code>hx-get</code></li>
+<li><code>hx-target</code></li>
+<li><code>hx-trigger</code></li>
+<li><code>hx-swap</code></li>
+<li><code>hx-select</code></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4750946">
+<h2 id="org4750946">hx-get</h2>
+<ul>
+<li>Choose the method and path of the request.</li>
+<li>Also <code>hx-post</code>, <code>hx-put</code>, <code>hx-patch</code>, <code>hx-delete</code>.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">button</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"button"</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>&gt;
+  Load Content
+&lt;/<span style="color: #721045;">button</span>&gt;
+</code></pre>
+</div>
+
+<p>
+VIDEO
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org3122a35">
+<h2 id="org3122a35">hx-target</h2>
+<ul>
+<li>Choose where the response content goes.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
+  No content yet.
+&lt;/<span style="color: #721045;">div</span>&gt;
+
+&lt;<span style="color: #721045;">button</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"button"</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span> <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>&gt;
+  Load Content
+&lt;/<span style="color: #721045;">button</span>&gt;
+</code></pre>
+</div>
+
+<p>
+VIDEO
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org5045978">
+<h2 id="org5045978">hx-trigger</h2>
+<ul>
+<li>Choose what causes the request.</li>
+<li>Also some modifiers like <code>delay</code>.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
+  No content yet.
+&lt;/<span style="color: #721045;">div</span>&gt;
+
+&lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span> <span style="color: #00538b;">target</span>=<span style="color: #2544bb;">"#content-container"</span> <span style="color: #00538b;">trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span>&gt;
+</code></pre>
+</div>
+
+<p>
+VIDEO
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org4fdba30">
+<h2 id="org4fdba30">hx-swap</h2>
+<ul>
+<li>Choose how to "swap in" the content.</li>
+<li><code>outerHTML</code>, <code>innerHTML</code>, <code>beforeend</code>, etc.</li>
+<li>Morph swaps preserve focus and state.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-html"   ><code trim>&lt;<span style="color: #721045;">ul</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"my-list"</span>&gt;&lt;/<span style="color: #721045;">ul</span>&gt;
+
+&lt;<span style="color: #721045;">form</span> <span style="color: #00538b;">action</span>=<span style="color: #2544bb;">"POST"</span>
+      <span style="color: #00538b;">hx-post</span>=<span style="color: #2544bb;">"/list-items"</span>
+      <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#my-list"</span>
+      <span style="color: #00538b;">hx-swap</span>=<span style="color: #2544bb;">"beforeend"</span>&gt;
+  &lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"text"</span> <span style="color: #00538b;">name</span>=<span style="color: #2544bb;">"name"</span>&gt;
+  &lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">type</span>=<span style="color: #2544bb;">"submit"</span>&gt;
+&lt;/<span style="color: #721045;">form</span>&gt;
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0f84379">
+<h2 id="org0f84379">hx-select</h2>
+<ul>
+<li>Pull out content from the response.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-js-jsx"   ><code trim>app.get(<span style="color: #2544bb;">'/content'</span>, (c) =&gt; (
+    &lt;&gt;
+<span style="color: #000000; background-color: #ffffff;">      </span>&lt;<span style="color: #721045;">div</span> <span style="color: #00538b;">id</span>=<span style="color: #2544bb;">"content-container"</span>&gt;
+<span style="color: #000000; background-color: #ffffff;">        </span>&lt;<span style="color: #721045;">strong</span>&gt;{<span style="color: #5317ac;">new</span> <span style="color: #005a5f;">Date</span>()}&lt;/<span style="color: #721045;">strong</span>&gt;
+<span style="color: #000000; background-color: #ffffff;">      </span>&lt;/<span style="color: #721045;">div</span>&gt;
+
+<span style="color: #000000; background-color: #ffffff;">      </span>&lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>
+             <span style="color: #00538b;">hx-select</span>=<span style="color: #2544bb;">"#content-container"</span>
+             <span style="color: #00538b;">target</span>=<span style="color: #2544bb;">"#content-container"</span>
+             <span style="color: #00538b;">trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span> /&gt;
+<span style="color: #000000; background-color: #ffffff;">    </span>&lt;/&gt;
+));
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org87ac8d8">
+<h2 id="org87ac8d8">Factoring Views</h2>
+<ul>
+<li>Break it up into things separately retrieved.</li>
+<li>Or not, and just use <code>hx-select</code>.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc552a16">
+<h2 id="orgc552a16">HX-Boost</h2>
+<ul>
+<li><code>hx-boost="true"</code> makes links and forms do page-replacement.</li>
+<li>Paint holding kinda makes this less needed.</li>
+<li>Some novel uses, e.g. music player that stays between pages.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orged0cd43">
+<h2 id="orged0cd43">Other stuff</h2>
+<ul>
+<li>hx-indicator: loading indicator</li>
+<li>hx-confirm: confirmation dialog</li>
+<li>hyperscript: concise language</li>
+<li>hx-push-url: update URL</li>
+<li>hyperscript: more concise language for</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org250e02a">
+<h2 id="org250e02a">Resources</h2>
+<ul>
+<li><a href="https://htmx.org/">htmx.org</a></li>
+<li><a href="https://hypermedia.systems/">hypermedia.systems</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes],
+width: 1280
+});
+
+</script>
+</body>
+</html>

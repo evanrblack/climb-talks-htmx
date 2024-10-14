@@ -88,10 +88,12 @@ VIDEO
 - Morph swaps preserve focus and state.
 
 #+begin_src html
-  <ul id="my-list">
-  </ul>
+  <ul id="my-list"></ul>
 
-  <form action="POST" hx-post="/list-items" hx-target="#my-list" hx-swap="beforeend">
+  <form action="POST"
+        hx-post="/list-items"
+        hx-target="#my-list"
+        hx-swap="beforeend">
     <input type="text" name="name">
     <input type="submit">
   </form>
