@@ -37,7 +37,7 @@
 * HOWL Stack
 - Hypertext On Whatever /you'd/ Like.
 - If your favored stack can serve HTML, you're good to go!
-- Avoid "Guess we need to use React to have this one page element update."
+- Avoid "We'll need a React SPA to have this one thing update."
 - React is becoming even more lock-in-y with Next.js.
 
 * Five Main Attributes
@@ -86,8 +86,8 @@ VIDEO
   </div>
 
   <input hx-get="/content"
-         target="#content-container"
-         trigger="onkeyup delay:1s">
+         hx-target="#content-container"
+         hx-trigger="onkeyup delay:1s">
 #+end_src
 
 * hx-trigger
@@ -125,8 +125,8 @@ VIDEO
 
         <input hx-get="/content"
                hx-select="#content-container"
-               target="#content-container"
-               trigger="onkeyup delay:1s" />
+               hx-target="#content-container"
+               hx-trigger="onkeyup delay:1s" />
       </>
   ));
 #+end_src

@@ -22,8 +22,8 @@
 </section>
 
 <section>
-<section id="slide-orgffe7a07">
-<h2 id="orgffe7a07">The Story So Far</h2>
+<section id="slide-org98eb5c1">
+<h2 id="org98eb5c1">The Story So Far</h2>
 <ul>
 <li>1997: DHTML</li>
 <li>1999: AJAX</li>
@@ -38,8 +38,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgcc0c845">
-<h2 id="orgcc0c845">SPA Day</h2>
+<section id="slide-org173aa91">
+<h2 id="org173aa91">SPA Day</h2>
 <ul>
 <li>Most things don't need to be single page apps</li>
 <li>Even SPAs have more traditional pages: settings, user profile, etc</li>
@@ -51,8 +51,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgdb47536">
-<h2 id="orgdb47536">HTMX-isms</h2>
+<section id="slide-org0583331">
+<h2 id="org0583331">HTMX-isms</h2>
 <ul>
 <li>Embrace hypertext. Be declarative.</li>
 <li>Use built-in browser functionality when possible.</li>
@@ -65,12 +65,12 @@
 </section>
 </section>
 <section>
-<section id="slide-org2a42463">
-<h2 id="org2a42463">HOWL Stack</h2>
+<section id="slide-orgc2feffe">
+<h2 id="orgc2feffe">HOWL Stack</h2>
 <ul>
 <li>Hypertext On Whatever <i>you'd</i> Like.</li>
 <li>If your favored stack can serve HTML, you're good to go!</li>
-<li>Avoid "Guess we need to use React to have this one page element update."</li>
+<li>Avoid "We'll need a React SPA to have this one thing update."</li>
 <li>React is becoming even more lock-in-y with Next.js.</li>
 
 </ul>
@@ -78,8 +78,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgca410fc">
-<h2 id="orgca410fc">Five Main Attributes</h2>
+<section id="slide-org02793e5">
+<h2 id="org02793e5">Five Main Attributes</h2>
 <ul>
 <li><code>hx-get</code></li>
 <li><code>hx-target</code></li>
@@ -92,8 +92,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd879265">
-<h2 id="orgd879265">hx-get</h2>
+<section id="slide-orgfc7fc36">
+<h2 id="orgfc7fc36">hx-get</h2>
 <ul>
 <li>Choose the method and path of the request.</li>
 <li>Also <code>hx-post</code>, <code>hx-put</code>, <code>hx-patch</code>, <code>hx-delete</code>.</li>
@@ -111,8 +111,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb7ee621">
-<h2 id="orgb7ee621">hx-get</h2>
+<section id="slide-org2c6a339">
+<h2 id="org2c6a339">hx-get</h2>
 <p>
 VIDEO
 </p>
@@ -120,8 +120,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org3ac489d">
-<h2 id="org3ac489d">hx-target</h2>
+<section id="slide-orgee078ba">
+<h2 id="orgee078ba">hx-target</h2>
 <ul>
 <li>Choose where the response content goes.</li>
 
@@ -142,8 +142,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org768a5c6">
-<h2 id="org768a5c6">hx-target</h2>
+<section id="slide-orgfe7308e">
+<h2 id="orgfe7308e">hx-target</h2>
 <p>
 VIDEO
 </p>
@@ -151,8 +151,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-orga8094a1">
-<h2 id="orga8094a1">hx-trigger</h2>
+<section id="slide-orgb4ad187">
+<h2 id="orgb4ad187">hx-trigger</h2>
 <ul>
 <li>Choose what causes the request.</li>
 <li>Also some modifiers like <code>delay</code>.</li>
@@ -166,16 +166,16 @@ VIDEO
 &lt;/<span style="color: #721045;">div</span>&gt;
 
 &lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>
-       <span style="color: #00538b;">target</span>=<span style="color: #2544bb;">"#content-container"</span>
-       <span style="color: #00538b;">trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span>&gt;
+       <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>
+       <span style="color: #00538b;">hx-trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span>&gt;
 </code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org1e141e6">
-<h2 id="org1e141e6">hx-trigger</h2>
+<section id="slide-org0338937">
+<h2 id="org0338937">hx-trigger</h2>
 <p>
 VIDEO
 </p>
@@ -183,8 +183,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org155d751">
-<h2 id="org155d751">hx-swap</h2>
+<section id="slide-orgc7459c7">
+<h2 id="orgc7459c7">hx-swap</h2>
 <ul>
 <li>Choose how to "swap in" the content.</li>
 <li><code>outerHTML</code>, <code>innerHTML</code>, <code>beforeend</code>, etc.</li>
@@ -209,8 +209,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org6643250">
-<h2 id="org6643250">hx-swap</h2>
+<section id="slide-org2ef49e0">
+<h2 id="org2ef49e0">hx-swap</h2>
 <p>
 VIDEO
 </p>
@@ -218,8 +218,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org46544a7">
-<h2 id="org46544a7">hx-select</h2>
+<section id="slide-orge7fe708">
+<h2 id="orge7fe708">hx-select</h2>
 <ul>
 <li>Pull out content from the response.</li>
 
@@ -235,8 +235,8 @@ VIDEO
 
 <span style="color: #000000; background-color: #ffffff;">      </span>&lt;<span style="color: #721045;">input</span> <span style="color: #00538b;">hx-get</span>=<span style="color: #2544bb;">"/content"</span>
              <span style="color: #00538b;">hx-select</span>=<span style="color: #2544bb;">"#content-container"</span>
-             <span style="color: #00538b;">target</span>=<span style="color: #2544bb;">"#content-container"</span>
-             <span style="color: #00538b;">trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span> /&gt;
+             <span style="color: #00538b;">hx-target</span>=<span style="color: #2544bb;">"#content-container"</span>
+             <span style="color: #00538b;">hx-trigger</span>=<span style="color: #2544bb;">"onkeyup delay:1s"</span> /&gt;
 <span style="color: #000000; background-color: #ffffff;">    </span>&lt;/&gt;
 ));
 </code></pre>
@@ -245,8 +245,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org16ec7cb">
-<h2 id="org16ec7cb">hx-select</h2>
+<section id="slide-orgbd92396">
+<h2 id="orgbd92396">hx-select</h2>
 <p>
 VIDEO
 </p>
@@ -254,8 +254,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-orga1a08e0">
-<h2 id="orga1a08e0">Todos</h2>
+<section id="slide-orge63fc70">
+<h2 id="orge63fc70">Todos</h2>
 <p>
 VIDEO
 </p>
@@ -263,8 +263,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org45158d7">
-<h2 id="org45158d7">Factoring Views</h2>
+<section id="slide-orgd14d2b6">
+<h2 id="orgd14d2b6">Factoring Views</h2>
 <ul>
 <li>Break it up into things separately retrieved.</li>
 <li>Use <code>HX-*</code> headers to determine partial content.</li>
@@ -275,8 +275,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org87a42ae">
-<h2 id="org87a42ae">HX-Boost</h2>
+<section id="slide-org461e28f">
+<h2 id="org461e28f">HX-Boost</h2>
 <ul>
 <li><code>hx-boost="true"</code> makes links and forms do page-replacement.</li>
 <li>Paint holding kinda makes this less needed.</li>
@@ -287,8 +287,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org04bd269">
-<h2 id="org04bd269">Other stuff</h2>
+<section id="slide-org37fded5">
+<h2 id="org37fded5">Other stuff</h2>
 <ul>
 <li>hx-indicator: loading indicator</li>
 <li>hx-confirm: confirmation dialog</li>
@@ -300,8 +300,8 @@ VIDEO
 </section>
 </section>
 <section>
-<section id="slide-org59283ed">
-<h2 id="org59283ed">Resources</h2>
+<section id="slide-org1662829">
+<h2 id="org1662829">Resources</h2>
 <ul>
 <li><a href="https://htmx.org/">htmx.org</a></li>
 <li><a href="https://hypermedia.systems/">hypermedia.systems</a></li>
