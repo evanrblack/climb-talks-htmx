@@ -59,7 +59,7 @@
 #+end_src
 
 * hx-get
-VIDEO
+#+REVEAL_HTML: <video src="videos/hx-get.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
 
 * hx-target
 - Choose where the response content goes.
@@ -75,7 +75,7 @@ VIDEO
 #+end_src
 
 * hx-target
-VIDEO
+#+REVEAL_HTML: <video src="videos/hx-target.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
 
 * hx-trigger
 - Choose what causes the request.
@@ -92,7 +92,7 @@ VIDEO
 #+end_src
 
 * hx-trigger
-VIDEO
+#+REVEAL_HTML: <video src="videos/hx-trigger.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
 
 * hx-swap
 - Choose how to "swap in" the content.
@@ -112,7 +112,7 @@ VIDEO
 #+end_src
 
 * hx-swap
-VIDEO
+#+REVEAL_HTML: <video src="videos/hx-swap.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
 
 * hx-select
 - Pull out content from the response.
@@ -133,10 +133,10 @@ VIDEO
 #+end_src
 
 * hx-select
-VIDEO
+#+REVEAL_HTML: <video src="videos/hx-select.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black">
 
 * Todos
-VIDEO
+#+REVEAL_HTML: <video src="videos/todos.mp4" loading="lazy" autoplay loop mute style="border: 2px solid black; height: 400px">
 
 * Factoring Views
 - Break it up into things separately retrieved.
