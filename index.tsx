@@ -132,7 +132,7 @@ app.get('/examples/select', (c) => {
 
       <input
         name="text"
-        hx-get="/examples/4"
+        hx-get="/examples/select"
         hx-select="#content-container"
         hx-target="#content-container"
         hx-trigger="keyup delay:0.5s"
